@@ -115,7 +115,7 @@ if __name__=="__main__":
     if opts.neg_gauss==True:
         neg_cout=open(opts.neg_curvout,'w')
     
-    fout.write('chrom,start,stop,width_95CI,gauss_a,gauss_b,gauss_c,FWHM,ChiSqr,ChiSqrReduced,best_height,mean_doc,auc,htwidratio,data_fit_pearsonr,plateauiness,neg_width95CI,neg_a,neg_b,neg_c,neg_fwhm,neg_chisq_raw,neg_reduced_chisq,neg_fit_height,neg_area,neg_ht_to_wid_ratio,neg_pearsonr,chisq_ratio,normFWHM,emptyflag,BIC1,BIC2\n')
+    fout.write('region,chrom,start,stop,width_95CI,gauss_a,gauss_b,gauss_c,FWHM,ChiSqr,ChiSqrReduced,best_height,mean_doc,auc,htwidratio,data_fit_pearsonr,plateauiness,neg_width95CI,neg_a,neg_b,neg_c,neg_fwhm,neg_chisq_raw,neg_reduced_chisq,neg_fit_height,neg_area,neg_ht_to_wid_ratio,neg_pearsonr,chisq_ratio,normFWHM,emptyflag,BIC1,BIC2\n')
     
     intervals_open=open(opts.intervals,'r')
     if opts.bedgraph:
