@@ -115,7 +115,7 @@ if __name__=="__main__":
     if opts.neg_gauss==True:
         neg_cout=open(opts.neg_curvout,'w')
     
-    fout.write('chrom,start,stop,width_95CI,gauss_a,gauss_b,gauss_c,FWHM,ChiSqr,ChiSqrReduced,best_height,mean_doc,auc,htwidratio,data_fit_pearsonr,plateauiness,neg_width95CI,neg_a,neg_b,neg_c,neg_fwhm,neg_chisq_raw,neg_reduced_chisq,neg_fit_height,neg_area,neg_ht_to_wid_ratio,neg_pearson4,chisq_ratio,emptyflag,BIC1,BIC2\n')
+    fout.write('chrom,start,stop,width_95CI,gauss_a,gauss_b,gauss_c,FWHM,ChiSqr,ChiSqrReduced,best_height,mean_doc,auc,htwidratio,data_fit_pearsonr,plateauiness,neg_width95CI,neg_a,neg_b,neg_c,neg_fwhm,neg_chisq_raw,neg_reduced_chisq,neg_fit_height,neg_area,neg_ht_to_wid_ratio,neg_pearsonr,chisq_ratio,normFWHM,emptyflag,BIC1,BIC2\n')
     
     intervals_open=open(opts.intervals,'r')
     if opts.bedgraph:
@@ -224,11 +224,11 @@ if __name__=="__main__":
                         
             else:
                 if len(double_check)==2:
-                    fout.write('region%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,%s,%s\n' % (counter,chrom,start,stop,width95CI,a,b,c,fwhm,chisq_raw,reduced_chisq,fit_height,meancov,area,ht_to_wid_ratio,pearsonr(y,best)[0],plateau_calc,norm_fwhm,empty_flag,bic1,bic2))
+                    fout.write('region%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,%s,%s,%s,%s\n' % (counter,chrom,start,stop,width95CI,a,b,c,fwhm,chisq_raw,reduced_chisq,fit_height,meancov,area,ht_to_wid_ratio,pearsonr(y,best)[0],plateau_calc,norm_fwhm,empty_flag,bic1,bic2))
                 else:
-                    fout.write('region%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,%s,%s\n' % (counter,chrom,start,stop,width95CI,a,b,c,fwhm,chisq_raw,reduced_chisq,fit_height,meancov,area,ht_to_wid_ratio,pearsonr(y,best)[0],plateau_calc,norm_fwhm,empty_flag,bic1,bic2))
-                    double_unfold_out.write('region%s_1,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,%s,%s\n' % (counter,chrom,x_gaus1[0],x_gaus1[-1],width95CI_1,a1,b1,c1,fwhm_1,chisq_raw_1,reduced_chisq_1,fit_height_1,meancov_1,area_1,ht_to_wid_ratio_1,pearsonr(y_gaus1,best_1)[0],plateau_calc_1,norm_fwhm_1,empty_flag,bic1,bic2))
-                    double_unfold_out.write('region%s_2,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,%s,%s\n' % (counter,chrom,x_gaus2[0],x_gaus2[-1],width95CI_2,a2,b2,c2,fwhm_2,chisq_raw_2,reduced_chisq_2,fit_height_2,meancov_2,area_2,ht_to_wid_ratio_2,pearsonr(y_gaus2,best_2)[0],plateau_calc_2,norm_fwhm_2,empty_flag,bic1,bic2))
+                    fout.write('region%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,%s,%s,%s,%s\n' % (counter,chrom,start,stop,width95CI,a,b,c,fwhm,chisq_raw,reduced_chisq,fit_height,meancov,area,ht_to_wid_ratio,pearsonr(y,best)[0],plateau_calc,norm_fwhm,empty_flag,bic1,bic2))
+                    double_unfold_out.write('region%s_1,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,%s,%s,%s,%s\n' % (counter,chrom,x_gaus1[0],x_gaus1[-1],width95CI_1,a1,b1,c1,fwhm_1,chisq_raw_1,reduced_chisq_1,fit_height_1,meancov_1,area_1,ht_to_wid_ratio_1,pearsonr(y_gaus1,best_1)[0],plateau_calc_1,norm_fwhm_1,empty_flag,bic1,bic2))
+                    double_unfold_out.write('region%s_2,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,%s,%s,%s,%s\n' % (counter,chrom,x_gaus2[0],x_gaus2[-1],width95CI_2,a2,b2,c2,fwhm_2,chisq_raw_2,reduced_chisq_2,fit_height_2,meancov_2,area_2,ht_to_wid_ratio_2,pearsonr(y_gaus2,best_2)[0],plateau_calc_2,norm_fwhm_2,empty_flag,bic1,bic2))
                    
                 
             for i in range(len(x)):
