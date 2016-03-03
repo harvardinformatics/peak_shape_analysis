@@ -1,0 +1,1 @@
+This repository represents a collection of analysis tools for analyzing the shape of read count (i.e. coverage) distributions in NGS sequencing experiments for a defined set of genomic intervals. These tools are designed to evaluate experiments aimed at detecting enrichment peaks (ChIP-seq, FAIRE-seq) that are expected to occur in a subset of any given genome.
